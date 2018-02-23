@@ -1,2 +1,2 @@
 # koans
-My fork from this awesome site: http://rubykoans.com/
+My fork from this awesome site to ramp up on Ruby: http://rubykoans.com/
