@@ -15,14 +15,10 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
-  # this is messy code I wrote on 2/25/2018, what's the more Ruby style to write this?
-  if a == b and b == c
-    return :equilateral
-  else if a == b or b == c or a == c
-         return :isosceles
-       end
-    return :scalene
-  end
+  # reference: https://gist.github.com/danneu/1126423
+  a, b, c = sides = [a, b, c].sort
+  raise TriangleError unless a > 0 and a + b > c
+  {1 => :equilateral, 2 => :isosceles, 3 => :scalene}[sides.uniq.size]
 end
 
 # Error class used in part 2.  No need to change this code.
