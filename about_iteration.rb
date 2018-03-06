@@ -78,6 +78,7 @@ class AboutIteration < Neo::Koan
     array = ["Jim", "Bill", "Clarence", "Doug", "Eli"]
 
     assert_equal "Clarence", array.find { |item| item.size > 4 }
+    self.test
   end
 
   def test_inject_will_blow_your_mind
@@ -119,5 +120,20 @@ class AboutIteration < Neo::Koan
   #   # code to read 'file'
   #
   # When you get to the "AboutSandwichCode" koan, recheck your answer.
+
+  # my own learnings on 3/5/2018 with each_with_object method
+  # what it does: it iterates through this collection, and eventually returns the object itself, example below:
+  def test_each_with_object
+    emails = ["stevesun@squareup.com", "adasun@squareup.com"]
+    emails.each_with_object([]) do |email, recipient_and_email|
+      recipient_and_email.push({ recipient: nil, email: email })
+    end
+  #   no need to add #{recipient_and_email} at the end of this method, it automatically returns #{recipient_and_email}
+  end
+
+  def test
+    puts "test_each_with_object: "
+    puts test_each_with_object
+  end
 
 end
