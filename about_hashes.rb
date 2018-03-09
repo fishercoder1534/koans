@@ -115,4 +115,10 @@ class AboutHashes < Neo::Koan
     assert_equal ["dos"], hash[:two]
     assert_equal [], hash[:three]
   end
+
+  def test_filter_hash_value_arrays
+  #   this is to demo how to filter hash values when the values are arrays
+  # basically, you'll want to map the entries, and then reject based on your condition for your values
+  # more details: https://stackoverflow.com/questions/49197830/ruby-hash-how-to-filter-value-an-array-and-return/49197955#49197955
+  end
 end
